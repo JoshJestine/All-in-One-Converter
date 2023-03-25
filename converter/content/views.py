@@ -1,13 +1,15 @@
 import os
 import subprocess
+import uuid
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
+from content import views
 
 def home(request):
     return render(request, 'content/home.html')
 
-def convert_pdf_to_docx(request):
+def pdf_to_docx(request):
     if request.method == 'POST':
         pdf_file = request.FILES['pdf_file']
         if pdf_file.name.endswith('.pdf'):
@@ -22,7 +24,7 @@ def convert_pdf_to_docx(request):
             subprocess.run(['pdf2docx', temp_path, output_path])
             # Return the converted DOCX file to the user for download
             with open(output_path, 'rb') as docx_file:
-                response = HttpResponse(docx_file.read(), content_type='content/vnd.openxmlformats-officedocument.wordprocessingml.document')
+                response = HttpResponse(docx_file.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
                 response['Content-Disposition'] = f'attachment; filename="{pdf_file.name[:-4]}.docx"'
             os.remove(temp_path)  # Remove the temporary PDF file
             os.remove(output_path)  # Remove the converted DOCX file

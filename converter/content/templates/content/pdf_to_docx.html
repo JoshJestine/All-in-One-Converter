@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Convert PDF to DOCX</h1>
-  <form method="POST" enctype="multipart/form-data">
+  <form method="POST" action="{% url 'content:pdf_to_docx' %}" enctype="multipart/form-data">
     {% csrf_token %}
     <div>
       <label for="pdf_file">Select PDF file:</label>
