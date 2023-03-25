@@ -18,6 +18,4 @@ from content import views
 
 app_name = 'content'
 
-urlpatterns = [
-    path('', views.home, name='home'),
-]
+urlpatterns = [    path('', views.home, name='home'),    path('pdf_to_docx/', views.convert_pdf_to_docx, name='pdf_to_docx'),]

@@ -45,7 +45,7 @@
 </head>
 <body>
     <header>
-        <h1>Minimalistic Home Page</h1>
+        <h1>All-in-One Converter</h1>
     </header>
     <nav>
         <a href="#">Home</a>
@@ -55,5 +55,10 @@
     <main>
         <p>Test.</p>
     </main>
+    <form>
+        <label for="file">Select a file:</label>
+        <input type="file" id="file" name="file">
+        <input type="submit" value="Submit">
 </body>
+<a href="{% url 'content:pdf_to_docx' %}">Convert PDF to DOCX</a>
 </html>
