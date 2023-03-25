@@ -14,3 +14,40 @@ Overall, the All-in-One Converter web app is a powerful and user-friendly tool t
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
+
+## Installation
+
+Clone the repository into a folder using Git CLI
+
+```bash
+    git clone https://github.com/JoshJestine/All-in-One-Converter.git
+```
+Navigate inside the Project
+
+```bash
+    cd All-in-One-Converter
+```
+
+Installation of Requirements
+
+```bash
+    pip install -r requirements.txt
+```
+
+Run Django Server
+ ```bash
+    py manage.py runserver
+```
+    
+## Documentation
+
+[Django](docs.djangoproject.com/en/)
+
+
+## Features
+
+- Provides all conversions for Imperial & Metric System
+- Instant Conversions
+- Minimalistic Interface
+- Easy-to-use
+
